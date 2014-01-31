@@ -1,0 +1,37 @@
+
+.box100 {
+background-color: #e54444;
+height:100px;
+}
+.box200 {
+background-color:#e5447a;
+height: 200px;
+}
+.box300 {
+background-color: #af44e5;
+height: 300px;
+}
+.box400 {
+background-color: #5f44e5;
+height: 400px;
+}
+#container {
+	margin-top: 50px auto;
+	background-color: #000;
+}
+
+.itemSelector{
+	float:left;
+	width: 300px;
+	color: #fff;
+	}
+
+#masonry{
+	margin: 0px auto;
+}
+
+.itemSelector p{
+	margin: 0px 5px;
+	margin-top: 5px;
+	padding: 20px;
+}

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*-----------------------------------------------------------------------------
   概要      : 
             : http://localhost:1024/IW31_eigazaseki/login.php
@@ -8,8 +8,9 @@
 -----------------------------------------------------------------------------*/
 
 //  HTTPヘッダーで文字コードを指定
-header("Content-Type:text/html; charset=UTF-8");
 //処理部
+
+
 ?>
 
 
@@ -44,201 +45,157 @@ header("Content-Type:text/html; charset=UTF-8");
 <script type="text/javascript" src="js/jquery.masonry.min.js"></script>
 <script type="text/javascript" src="js/jquery.infinitescroll.min.js"></script>
 -->
+    <style type="text/css">
+      /* last modified: 1 Dec 98 */
 
-</head>
-<body>
-	<!-- こっからメニュー部分 -->
-        <div class="snap-drawers">
-            <div class="snap-drawer snap-drawer-left">
-                <div>
-                    <h3>iroiro</h3>
-		    
-                    <h4>Menu</h4>
-                    <ul>
-                        <li><a href="index.php">TOPページ</a></li>
-                        <li><a href="search.php">デザイン検索</a></li>
-                        <li><a href="webTop.php">Webデザイン</a></li>
-                        <li><a href="colorTop.php">配色デザイン</a></li>
-                        <li><a href="tuto.php">チュートリアル</a></li>
-                        <li><a href="help.php">ヘルプ</a></li>
-                    </ul>
-                    <div>
-                        <p>&copy;  2013 irorio All Rights Reserved.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="snap-drawer snap-drawer-right"></div>
-        </div>
-	<!-- ここまでメニュー部分 -->
-	
-	
-	
-	<!-- こっからメイン部分 -->
-        <div id="content" class="snap-content">
-            
-	    <header>
-	    
-		    <div id="toolbar">
-	                <a href="#" id="open-left"></a>
-	                <h1>iroiro</h1>
-	            </div>
-	    
-	    </header>
-	    
-		<article id="masonry">
-		    <!--タイリングするブロック-->
-		    <div class="itemSelector">
-		    	<p class="box100">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box200">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box300">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box400">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box100">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box200">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box300">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box100">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box200">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box300">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box100">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box200">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box300">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box100">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box200">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box300">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box100">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box200">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box300">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box100">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box200">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box300">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box100">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box200">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box300">今すぐデザイン</p>
-		    </div>
-		    <div class="itemSelector">
-		    	<p class="box400">今すぐデザイン</p>
-		    </div>
-		</article>
-		
-			    
-	    <!--
-		<div id="container" class="masonry">
-			<div class="item h01 masonry-brick">1</div>
-			<div class="item h02 masonry-brick">2</div>
-			<div class="item h03 masonry-brick">3</div>
-			<div class="item h04 masonry-brick">1</div>
-			<div class="item h01 masonry-brick">1</div>
-			<div class="item h02 masonry-brick">2</div>
-			<div class="item h03 masonry-brick">3</div>
-			<div class="item h04 masonry-brick">1</div>
-			<div class="item h01 masonry-brick">1</div>
-			<div class="item h02 masonry-brick">2</div>
-			<div class="item h03 masonry-brick">3</div>
-			<div class="item h04 masonry-brick">1</div>
-			<div class="item h01 masonry-brick">1</div>
-			<div class="item h02 masonry-brick">2</div>
-			<div class="item h03 masonry-brick">3</div>
-			<div class="item h04 masonry-brick">1</div>
-			<div class="item h01 masonry-brick">1</div>
-			<div class="item h02 masonry-brick">2</div>
-			<div class="item h03 masonry-brick">3</div>
-			<div class="item h04 masonry-brick">1</div>
-			<div class="item h01 masonry-brick">1</div>
-			<div class="item h02 masonry-brick">2</div>
-			<div class="item h03 masonry-brick">3</div>
-			<div class="item h04 masonry-brick">1</div>
-			<div class="item h01 masonry-brick">1</div>
-			<div class="item h02 masonry-brick">2</div>
-			<div class="item h03 masonry-brick">3</div>
-			<div class="item h04 masonry-brick">1</div>
-			<div class="item h01 masonry-brick">1</div>
-			<div class="item h02 masonry-brick">2</div>
-			<div class="item h03 masonry-brick">3</div>
-			<div class="item h04 masonry-brick">1</div>
-			<div class="item h01 masonry-brick">1</div>
-			<div class="item h02 masonry-brick">2</div>
-			<div class="item h03 masonry-brick">3</div>
-			<div class="item h04 masonry-brick">1</div>
-			<div class="item h01 masonry-brick">1</div>
-			<div class="item h02 masonry-brick">2</div>
-			<div class="item h03 masonry-brick">3</div>
-			<div class="item h04 masonry-brick">1</div>
-			<div class="item h01 masonry-brick">1</div>
-			<div class="item h02 masonry-brick">2</div>
-			<div class="item h03 masonry-brick">3</div>
-			<div class="item h04 masonry-brick">1</div>
-		</div>
-	    -->
+      html {
+        font: 10px/1 Verdana, sans-serif;
+        background-color: blue;
+        color: white;
+      }
 
+      body {
+        margin: 1.5em;
+        border: .5em solid black;
+        padding: 0;
+        width: 48em;
+        background-color: white;
+      }
 
+      dl {
+        margin: 0;
+        border: 0;
+        padding: .5em;
+      }
 
+      dt {
+        background-color: rgb(204,0,0);
+        margin: 0;
+        padding: 1em;
+        width: 10.638%; /* refers to parent element's width of 47em. = 5em or 50px */
+        height: 28em;
+        border: .5em solid black;
+        float: left;
+      }
 
+      dd {
+        float: right;
+        margin: 0 0 0 1em;
+        border: 1em solid black;
+        padding: 1em;
+        width: 34em;
+        height: 27em;
+      }
 
-        </div>
-	<!-- ここまでメイン部分 -->
+      ul {
+        margin: 0;
+        border: 0;
+        padding: 0;
+      }
 
-	
-	
+      li {
+        display: block; /* i.e., suppress marker */
+        color: black;
+        height: 9em;
+        width: 5em;
+        margin: 0;
+        border: .5em solid black;
+        padding: 1em;
+        float: left;
+        background-color: #FC0;
+      }
 
-<!-- snap.js -->
-	
-<script src="js/snap.js"></script>
-<script type="text/javascript">
-    var snapper = new Snap({
-        element: document.getElementById('content')
-    });
+      #bar {
+        background-color: black;
+        color: white;
+        width: 41.17%; /* = 14em */
+        border: 0;
+        margin: 0 1em;
+      }
+
+      #baz {
+        margin: 1em 0;
+        border: 0;
+        padding: 1em;
+        width: 10em;
+        height: 10em;
+        background-color: black;
+        color: white;
+      }
+
+      form {
+        margin: 0;
+        display: inline;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      form p {
+        line-height: 1.9;
+      }
+
+      blockquote {
+        margin: 1em 1em 1em 2em;
+        border-width: 1em 1.5em 2em .5em;
+        border-style: solid;
+        border-color: black;
+        padding: 1em 0;
+        width: 5em;
+        height: 9em;
+        float: left;
+        background-color: #FC0;
+        color: black;
+      }
+
+      address {
+        font-style: normal;
+      }
+
+      h1 {
+        background-color: black;
+        color: white;
+        float: left;
+        margin: 1em 0;
+        border: 0;
+        padding: 1em;
+        width: 10em;
+        height: 10em;
+        font-weight: normal;
+        font-size: 1em;
+      }
+    </style>
+  </head>
+  <body>
+        <a class="btn btn-primary" id="startBtn">screenshot jpeg</a>
+      <span class="label">ここにキャプチャが表示される</span>
+    <img src="" id="area" />
+
+    <script type="text/javascript" src="js/html2canvas.js"></script>
+    <script type="text/javascript">
     
-</script>
-
-        <script type="text/javascript" src="js/demo.js"></script>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>       
+    $(function(){
+	
+       setTimeout( html2canvas(document.body,{
+		onrendered: function(canvas) {
+			dataURI = canvas.toDataURL('image/png');
+			$('img').attr('src',dataURI);
+ 		 }
+	});
+	        
+	$(function() {
+ 	   $.post(
+			"func/screen.php", 
+			{"id" : "test2", "canvas_data" : dataURI}, 
+			function(data){
+		        	
+	 		}
+		)
+	});
+	
+    </script>
+  
 
 </body>
 </html>

@@ -361,12 +361,18 @@ nav ul li#con a{
 	display: block;
 	color: #ff4d52;
 	}
-input {
+input,textarea {
 	box-shadow: none;
-	padding: 3px 10px;
+	padding: 5px 10px;
 	cursor: pointer;
-	margin:5px;
+	margin:5px auto;
+	background: #fff;
+	border:1px #ccc solid;
+	border-radius:3px;
 }
+input:focus,textarea:focus {
+	border: 1px #999 solid;
+	}
 
 
 
@@ -807,12 +813,13 @@ div#colorDiv{
 .btn {
 	border:none;
 	background: #eee;
-	padding: 10px 20px;
-	margin: 10px;
+	margin: 10px auto;
 	border-radius: 3px;
 	-wedkit-transition: all 0.3s;
 	-moz-tranzition: all 0.3s;
 	transition: all 0.3s;
+	height: 44px;
+	lin-height: 44px;
 }
 	
 .btn:hover {
@@ -825,12 +832,26 @@ div#colorDiv{
 /*　インライン */
 #winDisp{
 	width:100%;
-	height:80%;
-	position: fixed;
-	left: 0px;	
-	bottom: 0px;
+	height:100%;
 }
 
+
+h3#title {
+	width:100%;
+	padding: 40px 0px;
+	background: #eee;
+	text-align:center;
+	margin-bottom:40px;
+	font-size:24px;
+	}
+
+h3#pre {
+	width:100%;
+	padding: 20px 0px;
+	background: #eee;
+	text-align:center;
+	margin-top:40px;
+	}
 
 
 #closeBtn{
@@ -1082,13 +1103,43 @@ margin-top: -300px;
 
 td {
 	padding: 20px;
+        text-align:center;
+	vertical-align:middle;
 }
 
-#userInput input {
+#user input {
 	width: 50%;
 }
 
 #userInput textarea {
 	width: 100%;
 	height: 100px;
+	}
+	
+	
+.wrapInput {
+	width: 600px;
+	margin: 0 auto;
+	text-align:left;
+}
+
+.wrapInput h4 {
+	margin: 10px;
+	margin-top:20px;
+	}
+	
+.wrapInput input {
+	width: 50%;
+	}
+.wrapInput textarea {
+	width:100%;
+	}
+	
+.wrapinput .btn {
+	width:100%;
+	}
+	
+.divBtn {
+	margin: 20px;
+	text-align:center;
 	}

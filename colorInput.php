@@ -134,16 +134,22 @@ for( $i = 1; $i <=10; $i++){
 
 			
 		<div id="colorDivFlat">
-			<p>
+		<h3 id="title">作品情報の入力</h3>
+		<section class="wrapInput">
 			<form action="colorPut.php" method="POST"><? print $hid?>			
-					タイトル<input type="text" name="title" /><br />
-					タグ<input type="text" name="tug1" /><span id="tug" onClick="tugPlus()">増やす</span><br />
-		説明
-		<textarea name="text"></textarea>
-
-				<input type="submit"name="send" class="btn"  value="投稿する" />
+			<h4>タイトル（20文字以内）</h4>
+			<input type="text" name="title" />
+			<br />
+			
+			<h4>説明（1000文字以内）</h4>
+			<textarea name="text"></textarea>
+			
+			<br />
+			
+                        <div class="divBtn">
+			<input type="submit" name="send" value="投稿する" class="btn" /></div>
 			</form>
-			</p>
+			</section>
 		
 		</div>
 			

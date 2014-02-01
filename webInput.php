@@ -124,30 +124,35 @@ if($num > 0){		 // 結果が一件以上の場合。
 	<!-- こっからメイン部分 -->
         <div id="content" class="snap-content">
 
+	
+		<h3 id="title">作品情報の入力</h3>
 
-
-		<div id="openmenu" class="tub"><a href="#" id="open-left"></a></div>
-
-
-
-		<section class="wrap">
+		<section class="wrapInput">
 		
 			
 			<form action="webPut.php" method="POST">
-					タイトル<input type="text" name="title" /><br />
-					タグ<input type="text" name="tug1" /><span id="tug" onClick="tugPlus()">増やす</span><br />
-		説明
-		<textarea name="text"></textarea>
-		
-
-		<input type="submit" name="send" value="投稿する" />
+			
+			
+			<h4>タイトル（20文字以内）</h4>
+			<input type="text" name="title" />
+			<br />
+			
+			<h4>説明（1000文字以内）</h4>
+			<textarea name="text"></textarea>
+			
+			<br />
+			
+                        <div class="divBtn">
+			<input type="submit" name="send" value="投稿する" class="btn" /></div>
 			</form>
 		</section>
-		
-
-
-
+		<h3 id="pre">プレビュー</h3>
 <? print $disp ?>
+
+
+
+
+
 
 
 

@@ -160,5 +160,27 @@ function funcColor($colorName,$color) {
 
 
 
+function screen() {
+$browser = new COM("InternetExplorer.Application");
+$handle = $browser->HWND;
+
+$browser->Visible = true;
+$browser->FullScreen = true;
+$browser->Navigate("http://www.doyouphp.jp/");
+
+/* Is it completely loaded? (be aware of frames!)*/
+while ($browser->Busy) {
+    com_message_pump(4000);
+}
+$im = imagegrabwindow($handle, 0);
+$browser->Quit();
+
+$new_x = 320;
+$new_y = imagesy($im) * $new_x / imagesx($im);
+$newim = imagecreatetruecolor($new_x, $new_y);
+imagecopyresized($newim, $im, 0, 0, 0, 0, $new_x, $new_y, imagesx($im), imagesy($im));
+imagepng($newim, "test.png");
+}
 
 ?>
+

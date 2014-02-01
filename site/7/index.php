@@ -20,15 +20,16 @@ if( isset($_SESSION["id"]))
 	
 }
 
-$_SESSION["siteId"] = '5';
+$_SESSION["siteId"] = '7';
 $disp= "";
 if( isset($_SESSION["#header"])){
-	$disp = "5";
+	$disp = "7";
 }
 
 $hid= "";
-$hid.="<input type='hidden' name='back1' id='backbackground' value='#fff' />";
-$hid.="<input type='hidden' name='back2' id='marubackground' value='#ff0000' />";
+$hid.="<input type='hidden' name='back1' id='uebackground' value='#fff' />";
+$hid.="<input type='hidden' name='back2' id='manbackground' value='#4c6cb3' /> ";
+$hid.="<input type='hidden' name='back3' id='sitabackground' value='#e71920' />";
 
 ?>
 
@@ -93,6 +94,28 @@ $hid.="<input type='hidden' name='back2' id='marubackground' value='#ff0000' />"
 		$("#back").css('top',s);
 	});
 });
+
+
+$(function() {
+	$('input#reset').click(function(){
+	    if ( confirm('リセットしますか？')== true){
+
+
+    
+    		$("uebackground").val("#fff");
+    		$("manbackground").val("#4c6cb3");
+    		$("sitabackground").val("#e71920");
+
+	    
+	    	$("#ue").css("background","#fff");
+	    	$("#man").css("background","#4c6cb3");
+	    	$("#sita").css("background","#e71920");
+		
+		
+	    }
+	});
+});
+
 </script>
 
 <script type="text/javascript" src="../../js/jquery.min.js"></script>
@@ -143,9 +166,10 @@ $hid.="<input type='hidden' name='back2' id='marubackground' value='#ff0000' />"
 	<!-- こっからメイン部分 -->
         <div id="content" class="snap-content">
 
-		<div id="midasi" onClick="upDate('#midasi')"></div>
+	<div id="ue" onClick="upDate('#ue')"></div>
 
-	<div id="back" onClick="upDate('#back')"></div>
+	<div id="man" onClick="upDate('#man')"></div>
+	<div id="sita" onClick="upDate('#sita')"></div>
 		
 		
 		
@@ -173,21 +197,22 @@ $hid.="<input type='hidden' name='back2' id='marubackground' value='#ff0000' />"
 			<span id="closeBtn" onClick="closeBtn()">×</span>
 			<h3>カラーピッカー</h3>
 			<p>
-			ターゲット：<span id="target">none</span><br />
-			変更箇所：<span id="elem">none</span><br /><br />
-			
-			<!--
-			<span onClick="upDateElem('background')" class="elem">背景</span>
-			<span onClick="upDateElem('color')" class="elem">文字</span><br />
-			-->
-			
+			<table><tr>
+			<td>ターゲット</td><td><span id="target"></span></td></tr>
+			<tr><td>変更箇所</td><td><span id="elem"></span></td></tr>
+			</table>
+			  
+			  <!--
+			<span onClick="upDateElem('background')" class="elem">背景色</span>
+			<span onClick="upDateElem('color')" class="elem">文字色</span><br />
+			      -->
 			<br/>
 			<input type='text' id="full" />
 			<br />
 						
 			<form action="../../webInput.php" method="POST"><? print $hid?>			
 
-				<input type="submit" name="send" value="投稿する" />
+				<input type="submit" name="send" value="　投稿する　" class="btn" />　　　				<input type="button" name="reset" id="reset" value="　リセットする　"class="btn" />
 			</form>
 			</p>
 		

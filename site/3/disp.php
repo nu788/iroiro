@@ -163,6 +163,32 @@ echo "aa";
         </div>
 	<!-- js--><script type="text/javascript" src="js/main.js"></script>
 	
+         <script type="text/javascript" src="../../js/html2canvas.js"></script>
+    <script type="text/javascript">
+
+	
+	html2canvas(document.body,{
+		onrendered: function(canvas) {
+			dataURI = canvas.toDataURL('image/png');
+			$('img').attr('src',dataURI);
+ 		 }  ,
+		 timeout: 1000
+	});
+
+$(function(){
+	
+ 	   $.post(
+			"../../func/screen.php", 
+			{"id" : "test", "canvas_data" : dataURI}, 
+			function(data){
+		        	
+	 		}
+		)
+	
+});
+
+
+    </script>
 
 
 </body>

@@ -1,32 +1,32 @@
-$(document).ready(function(){
+ï»¿$(document).ready(function(){
 	
-	//DIV‚ÌID–¼
-	var num = 2;
-	var idName = new Array('back','maru');
+	//DIVã®IDå
+	var num = 3;
+	var idName = new Array('ue','man','sita');
 	
-	//w’è‚·‚é‚Æ‚±‚ë‚ÌCSS–¼
+	//æŒ‡å®šã™ã‚‹ã¨ã“ã‚ã®CSSå
 	var elemNum = 1;
 	var elem = new Array('background');
 	
 	var hidNameArray = new Array('back');
 	
-	//ID‚Ì”‚¾‚¯
+	//IDã®æ•°ã ã‘
 	for( var i = 0; i< num ; i++) {
-		//DIV–¼
+		//DIVå
 		target = "#"+ idName[i];
 		
 		
-		//w’è‚·‚é‚Æ‚±‚Ì‚©‚¸‚¾‚¯
+		//æŒ‡å®šã™ã‚‹ã¨ã“ã®ã‹ãšã ã‘
 		for( var l = 0; l < elemNum ; l++){ 
 										
-			//hid‚Ì’l‚ğŠi”[	
+			//hidã®å€¤ã‚’æ ¼ç´	
 			hidNo = i + 1;
 	
 			hidName ="#"+hidNameArray[l] +hidNo;
 							
-			str = $(hidName).val(); /* “ü—Í‚³‚ê‚½’l‚ğŠi”[ */
+			str = $(hidName).val(); /* å…¥åŠ›ã•ã‚ŒãŸå€¤ã‚’æ ¼ç´ */
 
-			//F•Ï‚¦‚é‚æ
+			//è‰²å¤‰ãˆã‚‹ã‚ˆ
 			$(target).css(elem[l], str);
 			
 		}
@@ -34,5 +34,6 @@ $(document).ready(function(){
 		
 	
 	}
+	
 });
 

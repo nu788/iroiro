@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*-----------------------------------------------------------------------------
   概要      : 
             : http://localhost:1024/IW31_eigazaseki/login.php
@@ -71,6 +71,26 @@ $hid.="<input type='hidden' name='color4' id='footercolor' value='#000' />";
   constrainTo: 'window'
 }) 
   });
+	
+$(function() {
+	$('input#reset').click(function(){
+	    if ( confirm('リセットしますか？')== true){
+	    
+	    	$("#header").css("background","#e54444");
+	    	$("#test1").css("background","#e5447a");
+	    	$("#test2").css("background","#af44e5");
+	    	$("#footer").css("background","#5f44e5");
+		
+	    	$("#header").css("color","#000");
+	    	$("#test1").css("color","#000");
+	    	$("#test2").css("color","#000");
+	    	$("#footer").css("color","#000");
+		
+		
+		
+	    }
+	});
+});
 </script>
 
 <script type="text/javascript" src="../../js/jquery.min.js"></script>
@@ -148,16 +168,17 @@ $hid.="<input type='hidden' name='color4' id='footercolor' value='#000' />";
 <p>昨日でないか足り幸に掴むが、その他人は普通ない大変ないと行ったのですもしですた、ない機会の所から連れです骨まし知れと得てならますのないな。実は私は愉快ございば云わうのたも詳しく、曖昧たて起るない事たと陥りから何の性質の事情がそのむるに自覚用いでいるずなけれ。悪口にも高等です今にしがしまっられるです前から通りがなりとか、自分にできとか、また雨から閉じ込めと行っ偽りがさ論旨、でたらめんから、せっかく忘れと偉い他を引き返しますと流れるて、口を応じて国家だけ人間などにある見識も接しです。</p>
 <p>しかも新たがはこの海鼠の大丈夫洋服をほかにするなかっためであるてすこぶる馳走廻っばみ一番を見え気あり。それであなたもその以上のあり云っつもりん、附随の一口と相違します致し方からは畳んたうて若いもしずない。断然私はその大変なら家より起るでもです、交渉のベルグソンのずっとしなを見えるているんのた。</p>
 		</div></div>
-			
-		<div id="colorDiv" data-snap-ignore="true">
+				<div id="colorDiv" data-snap-ignore="true">
 			<span id="closeBtn" onClick="closeBtn()">×</span>
 			<h3>カラーピッカー</h3>
 			<p>
-			ターゲット：<span id="target">none</span><br />
-			変更箇所：<span id="elem">none</span><br /><br />
-			
-			<span onClick="upDateElem('background')" class="elem">背景</span>
-			<span onClick="upDateElem('color')" class="elem">文字</span><br />
+			<table><tr>
+			<td>ターゲット</td><td><span id="target"></span></td></tr>
+			<tr><td>変更箇所</td><td><span id="elem"></span></td></tr>
+			</table>
+			  <br/>
+			<span onClick="upDateElem('background')" class="elem">背景色</span>
+			<span onClick="upDateElem('color')" class="elem">文字色</span><br />
 			
 			<br/>
 			<input type='text' id="full" />
@@ -165,11 +186,12 @@ $hid.="<input type='hidden' name='color4' id='footercolor' value='#000' />";
 						
 			<form action="../../webInput.php" method="POST"><? print $hid?>			
 
-				<input type="submit" name="send" value="投稿する" />
+				<input type="submit" name="send" value="　投稿する　" class="btn" />　　　				<input type="button" name="reset" id="reset" value="　リセットする　"class="btn" />
 			</form>
 			</p>
 		
 		</div>
+
 			
 
         </div>

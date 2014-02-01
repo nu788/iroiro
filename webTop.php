@@ -110,7 +110,7 @@ $(function(){
 		listClass: '',
 		transitionSpeed: 600,
 		showOnLoad: 'all',
-		sortOnLoad: false,
+		sortOnLoad: ['default','asc'],
 		multiFilter: false,
 		filterLogic: 'or',
 		resizeContainer: true,

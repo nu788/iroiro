@@ -25,6 +25,14 @@ $(function() {
 	});
 
 	inputCheck();
+	
+	$(function(){
+	setTimeout(function(){
+		$("#cover").fadeOut("slow");
+		$("#alert").fadeOut("slow");
+	},2000);
+});
+
 });
 
 

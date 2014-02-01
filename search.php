@@ -58,7 +58,7 @@ $num_rows = mysql_num_fields($result);
 
 //件数
 $num = mysql_num_rows($result) ;
-
+$newNo = $num -8;
 
 // 内容の取得
 if($num > 0){		 // 結果が一件以上の場合。
@@ -152,7 +152,9 @@ if($num > 0){		 // 結果が一件以上の場合。
 			
 			//こっから表
 
-			$disp .=" <li class='mix ".$type." ".$siteNo." ".$userId."".$colorClass." page".$no."'><a href='#' onclick=\"TINY.box.show({url:'value.php',post:'siteDesId=".$siteDesId."',width:1300,height:600,opacity:20,topsplit:3})\">";
+			if($newNo < $siteDesId) { $new = "new"; }else { $new = ""; }
+
+			$disp .=" <li class='mix ".$type." ".$siteNo." ".$userId."".$colorClass." page".$no." ".$new."'><a href='#' onclick=\"TINY.box.show({url:'value.php',post:'siteDesId=".$siteDesId."',width:1300,height:600,opacity:20,topsplit:3})\">";
 			$disp .=" <p><strong>".$siteTitle."</strong>";
 			$disp .= "<small> by ".$userId."</small><br />";
 			$disp .= $siteCap."</p>";
@@ -190,10 +192,17 @@ if($num > 0){		 // 結果が一件以上の場合。
 unset($_SESSION["siteDesId"]);
 
 $pageDisp= "";
-for ($i = 1 ; $i < $no ; $i++){
+for ($i = 0 ; $i < $no ; $i++){
 	$pageNo = $no - $i;
-	$pageDisp .= "<li class='filter' data-filter='page".$pageNo."'>".$i."</li> ";      
+	$dispI = $i+ 1;
+	$pageDisp .= "<li class='filter' data-filter='page".$pageNo."'>".$dispI."</li> ";      
 
+}
+
+if ( isset( $_GET["back"] ) ) {
+	$winDisp ="投稿が完了しました！";
+}else {
+ 	$winDisp ="Now Loading...";
 }
 
 
@@ -240,7 +249,7 @@ $(function(){
 		gridClass: '',
 		listClass: '',
 		transitionSpeed: 600,
-		showOnLoad: 'all',
+		showOnLoad: 'new',
 		sortOnLoad: ['default','asc'],
 		multiFilter: false,
 		filterLogic: 'or',
@@ -290,7 +299,9 @@ $(function(){
 	<!-- こっからメイン部分 -->
         <div id="content" class="snap-content">
 	
-            
+		<div id="cover"></div>
+		<div id="alert"><? print $winDisp; ?><br /><img src="img/preload.gif" /></div>
+	
 			<div id="openmenu" class="tub"><a href="#" id="open-left"></a></div>
 			<div id="login" class="tub"><? print $link ?></div>
 	
@@ -322,29 +333,26 @@ $(function(){
 			    <li class="filter" data-filter="color">配色デザインのみ</li>
 			</ul>
 			
-			<ul id="mixNav" class="clearfix">
-			    <li>サイト</li>
-			    <li class="filter active" data-filter="all">すべて</li>
-			    <li class="filter" data-filter="1">テスト</li>
-			    <li class="filter" data-filter="4">レスポンシブ</li>
-			    <li class="filter" data-filter="5">日本国旗</li>
-			</ul>
-			
-			<ul id="mixNav" class="clearfix">
-			    <li>色</li>
-			    <li class="filter active" data-filter="all">すべて</li>
-    			    <li class="filter" data-filter="fff ffffff">白</li>        
-			    <li class="filter" data-filter="000 000000">黒</li> 
-			    <li class="filter" data-filter="eee eeeeee ddd dddddd ccc cccccc bbb bbbbbb aaa aaaaaa 999 999999 888 888888 777 777777 666 666666 555 555555">灰色</li>
-
-			</ul>
-						</ul>	
 			<ul class="controls clearfix">
 				<li>表示順</li>
 				<li class="sort" data-sort="default" data-order="desc">古い順</li>
 				<li class="sort" data-sort="default" data-order="asc">新しい順</li>
 				<li class="sort active" data-sort="default" data-order="desc">リセット</li>
 			</ul>
+			
+			<ul id="mixNav" class="clearfix">
+			    <li>色系統</li>
+			    <li class="filter active" data-filter="all">すべて</li>
+    			    <li class="filter" data-filter="fff ffffff fefefe fdfdfd fcfcfc fbfbfb ffffff0 faf0e6 f8f8ff fffafa fff5ee f0ffff f5f5f5 fofff0 fffaf0 f5f5dc f5fffa fff0f5 fdf5e6 f0f8ff fff8dc">白</li>        
+			    <li class="filter" data-filter="000 000000">黒</li> 
+			    <li class="filter" data-filter="f06 ffefd5 ffebcd ffe5c5 faebd7 ffe4e1 ffe4b5 f5deb3 ffdead ffdab9 d8bfd8 ffb6c1 ffc0cb dda0dd ee82ee db7093 ff69b4 da70d6 ba55d3 ff00ff ff00ff ff1493">ピンク</li> 
+			    <li class="filter" data-filter="ff6347 ff4500 ff0000 c71585 dc143c 8b0000eb6ea5 c53d43 e60033 ce5242 d7a98c f6b894 bb5535 8a3319 752100 fffafa ffe4e1 800000 8b0000 a52a2a b22222 cd5c5 bc8f8f e0067a f08080 ffa07a ff7f50 ff4500 dc143c ffc0cb ffb6c1 ff0000 fa0000 fb0000 fc0000 fd0000 fe0000 f90000 f80000 f70000 f6000 f50000 f40000 f30000 f20000 f10000">赤</li> 
+			    <li class="filter" data-filter="000 000000">緑</li>
+			    <li class="filter" data-filter="000 000000">青</li>  
+			    <li class="filter" data-filter="eee eeeeee ddd dddddd ccc cccccc bbb bbbbbb aaa aaaaaa 999 999999 888 888888 777 777777 666 666666 555 555555 696969 a9a9a9 c0c0c0 d3d3d3 dcdcdc">灰色</li>
+
+			</ul>
+					
 		
 			<ul id="mixNav" class="clearfix">
 	
@@ -362,6 +370,7 @@ $(function(){
 		<article id="webSearch">
 			<ul id="Grid">
 				<? print $disp ?>
+			</ul>
 
 		</article>
 

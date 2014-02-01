@@ -9,6 +9,7 @@
 
 //  HTTPヘッダーで文字コードを指定
 header("Content-Type:text/html; charset=UTF-8");
+  header("Location:search.php?back=web");
 //処理部
 session_start();
 
@@ -111,9 +112,9 @@ if($num > 0){		 // 結果が一件以上の場合。
 
 
 unset($_SESSION["siteId"]);
-$disp .= "成功しました";
+$disp .= "投稿できました！";
 
-?>
+  ?>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"

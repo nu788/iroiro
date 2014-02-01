@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*-----------------------------------------------------------------------------
   概要      : 
             : http://localhost:1024/iroiro/site/4/index.php
@@ -93,6 +93,27 @@ $hid.="<input type='hidden' name='back2' id='marubackground' value='#ff0000' />"
 		$("#back").css('top',s);
 	});
 });
+
+
+
+$(function() {
+	$('input#reset').click(function(){
+	    if ( confirm('リセットしますか？')== true){
+
+
+    
+    		$("#backbackground").val("#fff");
+    		$("#marubackground").val("#ff0000");
+
+	    
+	    	$("#back").css("background","#fff");
+	    	$("#maru").css("background","#ff0000");
+		
+		
+	    }
+	});
+});
+
 </script>
 
 <script type="text/javascript" src="../../js/jquery.min.js"></script>
@@ -167,27 +188,25 @@ $hid.="<input type='hidden' name='back2' id='marubackground' value='#ff0000' />"
 
         </div>
 	<!-- ここまでメイン部分 -->
-
-	
 		<div id="colorDiv" data-snap-ignore="true">
 			<span id="closeBtn" onClick="closeBtn()">×</span>
 			<h3>カラーピッカー</h3>
 			<p>
-			ターゲット：<span id="target">none</span><br />
-			変更箇所：<span id="elem">none</span><br /><br />
-			
-			<!--
-			<span onClick="upDateElem('background')" class="elem">背景</span>
-			<span onClick="upDateElem('color')" class="elem">文字</span><br />
-			-->
-			
+			<table><tr>
+			<td>ターゲット</td><td><span id="target"></span></td></tr>
+			<tr><td>変更箇所</td><td><span id="elem"></span></td></tr>
+			</table>
+		             <!--
+			<span onClick="upDateElem('background')" class="elem">背景色</span>
+			<span onClick="upDateElem('color')" class="elem">文字色</span><br />
+			                   -->
 			<br/>
 			<input type='text' id="full" />
 			<br />
 						
 			<form action="../../webInput.php" method="POST"><? print $hid?>			
 
-				<input type="submit" name="send" value="投稿する" />
+				<input type="submit" name="send" value="　投稿する　" class="btn" />　　　				<input type="button" name="reset" id="reset" value="　リセットする　"class="btn" />
 			</form>
 			</p>
 		

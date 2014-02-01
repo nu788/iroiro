@@ -20,10 +20,10 @@ if( isset($_SESSION["id"]))
 	
 }
 
-$_SESSION["siteId"] = '5';
+$_SESSION["siteId"] = '7';
 $disp= "";
 if( isset($_SESSION["#header"])){
-	$disp = "5";
+	$disp = "7";
 }
 
 if( isset($_GET["siteDesId"])){
@@ -37,7 +37,7 @@ if( isset($_GET["siteDesId"])){
 	
 	$disp= "";
 	$result = "";		
-	$no = "5";
+	$no = "7";
 	$hid ="";
 	// 入力した内容の受け取りとプログラムの実行
 	$sql = "select * from sitedescolor where siteDesId = '".$_GET["siteDesId"]."'";
@@ -140,10 +140,11 @@ if( isset($_GET["siteDesId"])){
 
 </head>
 <body style="overflow-x:hidden;overflow-y:scroll;">
-	
-		<div id="maru" onClick="upDate('#maru')"></div>
+	<div id="ue" onClick="upDate('#ue')"></div>
 
-	<div id="back" onClick="upDate('#back')"></div>
+	<div id="man" onClick="upDate('#man')"></div>
+	<div id="sita" onClick="upDate('#sita')"></div>
+		
 			
 <? print $hid?>			
             

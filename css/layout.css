@@ -466,7 +466,6 @@ dl{
 
 #menuwrap {
 	width: 100%;
-	height: 100%;
 	overflow-x: hidden;
 	z-index: 5;
 }
@@ -793,6 +792,7 @@ div#colorDiv{
 
 #colorDiv p{
 	padding: 20px;
+	padding-top: 0px;
 }
 
 #colorDiv input{
@@ -803,11 +803,18 @@ div#colorDiv{
 	padding: 3px 10px;
 }
 	
+#colorDiv td {
+	padding:10px;
+	}
 	
 	.wrap{
 		width:1000px;
 		margin:0 auto;
 	}
+	
+#target,#elem {
+	color	: #f06;
+	}	
 	
 	
 .btn {
@@ -935,12 +942,13 @@ div#result {
 
 }
 
-div#result a {
+div#alert a {
 	color: #000;
-	display:box;
+	display:block;
 	background: #eee;
-	padding: 10px 30px;
-	margin: 100px auto;
+	padding: 20px ;
+	margin: 10px;
+	width: 90%;
 }
 
 
@@ -977,9 +985,28 @@ div#result a {
 
 #colorDivFlat p{
 	margin:0 auto;
-	padding: 30px;
-	width: 500px;
+	width: 1000px;
+	padding:10px;
 }
+
+#colorDivFlat td {
+	padding:10px;
+}
+
+#colorDivFlat td .btn {
+	float:left;
+	margin:0 10px;
+	}
+
+#colorDivFlat .btn {
+	display:block;
+	height: 44px;
+	line-height:44px;
+	width:100px;
+	text-align:center;
+	}
+	
+	
 div#colorS {
 	width:100%;
 	height: 100%;
@@ -1142,4 +1169,39 @@ td {
 .divBtn {
 	margin: 20px;
 	text-align:center;
+	}
+	
+	
+	
+	
+#cover {
+	width:100%;
+	height: 100%;
+	opacity:0.8;
+	background: #333;
+	z-index: 50;
+	position:fixed;
+	top:0;
+	left:0;
+}
+    
+#alert {
+	width:200px;
+	height:200px;
+	padding:50px;
+	border-radius:100%;
+	position:fixed;
+	top: 50%;
+	left:50%;
+	margin-left: -150px;
+	margin-top: -150px;
+	z-index: 100;
+	background: #fff;
+	text-align:center;
+	line-height: 100px;
+	opacity:0.9;
+	}
+	
+table {
+	margin: 0 auto;
 	}

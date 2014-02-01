@@ -120,15 +120,13 @@ $_SESSION["siteId"] = "2";
 			
 		<div id="colorDivFlat">
 			<p>
-			ターゲット：<span id="target">none</span><br /><br />
-			色の数を　<span onClick="divPlus()" class="btn" >増やす</span><span onClick="divMin()" class="btn" >減らす</span>
-			<br />
-			<br/>
+			<table><tr>
+			<td>ターゲット</td><td><span id="target"></span></td></tr>
+			<tr><td>色の数</td><td><span onClick="divPlus()" class="btn" >増やす</span><span onClick="divMin()" class="btn" >減らす</span></td></tr>
+			</table>
 			<input type='text' id="full" />
 						
-			<form action="colorInput.php" method="POST"><? print $hid?>			
-
-				<input type="submit" name="send"  class="btn" value="投稿する" />
+			<form action="colorInput.php" method="POST"><? print $hid?>						<input type="submit" name="send"  class="btn" value="投稿する" />  
 			</form>
 			</p>
 		

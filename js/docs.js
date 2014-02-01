@@ -1,39 +1,38 @@
-//‰Šú‰»
+ï»¿//åˆæœŸåŒ–
 var target = "none";
 var elem ="background";
 
 
-//ƒ^[ƒQƒbƒgiDIV–¼j•ÏX
+//ã‚¿ãƒ¼ã‚²ãƒƒãƒˆï¼ˆDIVåï¼‰å¤‰æ›´
 function upDate(strTar){
     target= strTar;
     
-    //ƒJƒ‰[ƒpƒŒƒbƒg‚É•\¦
+    //ã‚«ãƒ©ãƒ¼ãƒ‘ãƒ¬ãƒƒãƒˆã«è¡¨ç¤º
     $("#target").html(target);
     $("#elem").html(elem);
     
-    //ƒJƒ‰[ƒpƒŒƒbƒg‚ğ•\¦    
+    //ã‚«ãƒ©ãƒ¼ãƒ‘ãƒ¬ãƒƒãƒˆã‚’è¡¨ç¤º    
     $("div#colorDiv").css("display","inline");
     
 }
 
-//ƒGƒŒƒƒ“ƒgi•Ï‚¦‚éêŠj‚ğ•ÏX
+//ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆï¼ˆå¤‰ãˆã‚‹å ´æ‰€ï¼‰ã‚’å¤‰æ›´
 function upDateElem(strElem){
     elem= strElem;
     $("#elem").html(elem);
 }
             
-//F•ÏX
+//è‰²å¤‰æ›´
 function updateBorders(color) {
-    //F•ÏX
+    //è‰²å¤‰æ›´
     $(target).css(elem, color.toHexString());
     
-    //hidden‘}“ü
+    //hiddenæŒ¿å…¥
     $(target+""+elem).val(color);
     $(target+"Hid").val(color);
     
 
 }
-
 
 function closeBtn(){
     $("div#colorDiv").css("display","none");
@@ -63,9 +62,9 @@ function divMin(){
 
 function divColorRun(){
          for( i =1 ; i <= 10; i++){
-	      var color = Math.floor(Math.random() * 0xFFFFFF).toString(16);	//#RRGGBB‚ğæ“¾
+	      var color = Math.floor(Math.random() * 0xFFFFFF).toString(16);	//#RRGGBBã‚’å–å¾—
 		for(count = color.length; count < 6; count++){
-			color = "0" + color;     				//ãˆÊ‚É0‚ğ•âŠ®‚·‚é
+			color = "0" + color;     				//ä¸Šä½ã«0ã‚’è£œå®Œã™ã‚‹
 		}
 		color = "#" + color;      
 		$("div#colorS div#color"+i).css("background",color);
@@ -105,8 +104,8 @@ $("#full").spectrum({
     showAlpha: true,
     maxPaletteSize: 100,
     maxSelectionSize: 5,
-    chooseText: "change!",
-    cancelText: "cancel",
+    chooseText: "ãƒ‘ãƒ¬ãƒƒãƒˆã«ç™»éŒ²",
+    cancelText: "ã‚„ã‚ã‚‹",
     preferredFormat: "hex",
     localStorageKey: "spectrum.demo",
     move: function (color) {
@@ -137,3 +136,4 @@ prettyPrint();
 
 
 });
+

@@ -20,10 +20,10 @@ if( isset($_SESSION["id"]))
 	
 }
 
-$_SESSION["siteId"] = '7';
+$_SESSION["siteId"] = '4';
 $disp= "";
 if( isset($_SESSION["#header"])){
-	$disp = "7";
+	$disp = "4";
 }
 
 if( isset($_GET["siteDesId"])){
@@ -37,7 +37,7 @@ if( isset($_GET["siteDesId"])){
 	
 	$disp= "";
 	$result = "";		
-	$no = "7";
+	$no = "4";
 	$hid ="";
 	// 入力した内容の受け取りとプログラムの実行
 	$sql = "select * from sitedescolor where siteDesId = '".$_GET["siteDesId"]."'";
@@ -73,10 +73,11 @@ if( isset($_GET["siteDesId"])){
 
 	$hid= "";
 	
-	for( $i = 1 ; $i <=3 ; $i++)
+	for( $i = 1 ; $i <=6 ; $i++)
 	{
 		$target= "back".$i;
 		$hid.="<input type='hidden' name='".$target."' id='".$target."' value='".$_SESSION[$target]."' />";
+		$hid.="<input type='hidden' name='color". $i ."' id='color". $i ."' value='".$_SESSION["color". $i ]."' />";
 		
 	}
 	
@@ -139,10 +140,81 @@ if( isset($_GET["siteDesId"])){
 
 </head>
 <body style="overflow-x:hidden;overflow-y:scroll;">
-	<div id="ue" onClick="upDate('#ue')"></div>
+	
+	<div id="back" onClick="upDate('#back')"></div>
+		
+		
+		<div id="header" onClick="upDate('#header')">
+		
+		<h1>Makes</h1>
+		
+		</div>
+		
+		<p class="full"><img src="img/top1.jpg" /></p>
+					
+		<div id="menuWrap" onClick="upDate('#menuWrap')">
+			<ul class="clearfix">
+				<li>Menu</li>
+				<li>photo</li>
+				<li>menu</li>
+				<li>reserve</li>
+			</ul>
+		</div>
+		
 
-	<div id="man" onClick="upDate('#man')"></div>
-	<div id="sita" onClick="upDate('#sita')"></div>
+		<div id="wrap" class="clearfix">
+			
+			<div id="left" onClick="upDate('#left')">
+				<div id="about">
+				
+					<span id="out"></span>
+					<p class="mida">About Us</p>
+					
+					<p class="content">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat pellentesque tortor vel feugiat. Aliquam erat volutpat. Nulla a nibh eu lorem posuere consectetur id vel libero. Sed eu quam eu enim convallis dapibus. Ut eu lectus laoreet neque mollis feugiat. Duis pulvinar justo ut nisi volutpat feugiat. Praesent pharetra lacinia enim id luctus. Etiam convallis nunc et bibendum congue. 			</p>
+				
+					</p>
+				</div>
+				
+				<div id="update">
+				
+					<p class="mida">UpDate</p>
+					
+					<p class="content">
+						2013.12.03 Campaign&fotter Update<br/>
+						2013.12.02 Open!<br/>
+					</p>
+				
+				</div>
+			
+			</div>
+			
+			<div id="right" onClick="upDate('#right')">
+			
+				<div id="cam">
+				
+					<p class="mida">Campaign</p>
+					
+					<p class="content">
+						Nullam sit amet quam urna. Suspendisse mauris justo, malesuada tempor sapien eu, vulputate tristique purus. Duis nec ante velit. 
+					</p>
+				
+				</div>
+			
+	
+			
+			
+			</div>
+			
+		
+		</div>
+		
+		<div id="footer" onClick="upDate('#footer')">
+		
+			Copyright &copy; 2013 Makesgrouop inc. All RIghts Reserved.
+		
+		
+		</div>
 		
 			
 <? print $hid?>			

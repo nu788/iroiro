@@ -1,0 +1,207 @@
+*{
+	-wedkit-transition: all 0.9s;
+	-moz-tranzition: all 0.9s;
+	transition: all 0.9s;
+	 -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;	
+}
+
+@font-face {
+	font-family: 'kozu';
+	src: url('../../../font/KozGoPr6N-Light.otf') format('truetype');
+}
+@font-face {
+	font-family: 'han';
+	src: url('../../../font/Hannari.otf') format('truetype');
+}
+
+#content{
+	font-family:'kozu';
+	height: 100%;
+}
+
+#back{
+	position:absolute;
+	left:0;
+	width: 100%;
+	z-index: 100;
+	height: 100%;
+	background: #fff;
+
+	-wedkit-transition: all 0s;
+	-moz-tranzition: all 0s;
+	transition: all 0s;
+}
+
+.wrap {
+	width:100%;
+	max-width:960px;
+	margin:0 auto;
+	}
+
+
+#header {
+	position: relative;
+	width: 100%;
+	background: #5f44e5;
+	color: #fff;
+	z-index: 100;
+	
+}
+
+#name {
+	text-align:right;
+	font-family:'han';
+	font-size:28px;
+	padding:20px;
+	padding-bottom:0px;
+}
+
+
+#info {
+	text-align:right;
+	font-size:12px;
+	padding: 20px;
+	padding-top:0px;
+}
+
+
+
+#menuWrap {
+	position: relative;
+	width: 100%;
+	background: #1a1240;
+	color: #fff;
+	z-index: 100;
+}
+#menuWrap ul{
+	margin:0px auto;
+	width: 100%;
+	max-width: 960px;
+	padding : 0 10px;
+}
+
+/* スマートフォン用css */
+#menuWrap ul li{
+	width:20%;
+	float:left;
+	font-size:10px;
+	text-align:center;
+	cursor: pointer;
+	margin:0px;
+	padding:5px 0 10 0;
+}
+#menuWrap ul li:hover{
+	color: #5f44e5;
+}
+
+h5 {
+	margin:0;
+	margin-bottom:-5px;
+	padding:0;
+	font-size:36px;
+}
+ 
+/* タブレット用css */
+@media only screen and (min-width: 481px) {
+	#menuWrap ul li{
+		font-size:16px;
+		padding:20px;
+		width:auto;
+	}
+	
+	#menuWrap ul li:first-child {
+		padding-left:0px;
+		}
+	#menuWrap ul li:nth-child(even){
+	}
+	
+	h5   {
+		display:none;
+		
+	
+	}
+}
+
+/* PC用css */
+@media only screen and (min-width: 769px) {
+
+	#menuWrap ul li{
+	
+	}
+	
+	#menuWrap ul li:nth-child(odd){
+	}
+	
+	#menuWrap ul li:nth-child(4){
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+#cap {
+	position: relative;
+	width: 100%;
+	background: #a6a5ac;
+	color: #fff;
+	z-index: 100;
+	padding:0 20px;
+}
+
+h4 {
+	font-size: 24px;
+	}
+
+
+ul#con {
+	position: relative;
+	z-index: 100;
+
+	padding:0px;
+
+}
+
+ul#con li {
+	width:100%;
+	max-width: 460px;
+	height: 200px;
+	background: #333;
+	float:left;
+	margin-bottom:20px;
+	padding:20px;
+	}
+
+
+/*
+ul#con li:nth-child(odd){
+		margin-right: 20px;
+	}
+	
+ul#con li:nth-child(1) {
+}
+ul#con li:nth-child(2) {
+		margin-bottom:20px;
+}
+
+*/	
+	
+
+#footer {
+	position: relative;
+	bottom:0;
+	width: 100%;
+	color:fff;
+	background: #444;
+	z-index: 100;
+	padding: 20px;
+}

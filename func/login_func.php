@@ -1,4 +1,6 @@
 <?php
+header("Content-Type:text/html; charset=UTF-8");
+
 /*-----------------------------------------------------------------------------
   概要      : 
             : http://localhost:1024/IW31_eigazaseki/login.php
@@ -6,12 +8,9 @@
   作成日    : 
   更新履歴  : 
 -----------------------------------------------------------------------------*/
-
 //  HTTPヘッダーで文字コードを指定
-header("Content-Type:text/html; charset=UTF-8");
 //処理部
 
-session_start();
 
 //処理部
 require 'func.php';

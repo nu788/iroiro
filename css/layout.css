@@ -651,10 +651,11 @@ li.mix  a:hover{
 
 ul#mixNav{
 	margin: 0 auto;
+	margin-left: 20px;
 	margin-bottom: 20px;
 	float:left;
-	width: 50%;
 }
+
 
 ul#mixNav li{
 	float: left;

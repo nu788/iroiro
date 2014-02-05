@@ -1,4 +1,4 @@
-﻿ /*
+ /*
 var tugCnt = 1;
 
 function tugPlus() {
@@ -53,13 +53,12 @@ $(function() {
 		function(data){
 	
 		        if (data.length>0){
-				var res = data.substr(0,2)
-				$("#disp").html(data); /* 結果出力用のDIVにHTML文字列を設定する */
+				var res = data.substr(0,1)
+				$("#disp").html(data);
 		        	
-				 if( res == "OK")
-				 {
-				 	
+				    if (res == 0){
 					
+					alert( "aa");
 					$.post(
 						"func/session_func.php",
 						{"id": id, "pass": pass},
@@ -67,8 +66,8 @@ $(function() {
 							window.location.href = 'myPage.php';
 						}
 					)
-							
-				 }
+						
+						}	
 			}
 		
 		

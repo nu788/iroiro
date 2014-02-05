@@ -59,13 +59,10 @@ function funcRogin($link,$sql,$inputPass){
 	
 	// IDとパスワードの検証
 	if($pass == $inputPass){		// 合っているとき
-		$msg = "OK";
+		$msg = 0;
 		
 		
-	} else {			// 間違っているとき（テスト用メッセージ）
-		$msg = "<strong><font color='#f00'>パスワードが間違っています。</font></strong>";
-	}
-	
+	} 
 	
 	//結果保持用メモリを開放する
 	mysql_free_result($result);

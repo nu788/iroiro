@@ -2,14 +2,46 @@
 /*-----------------------------------------------------------------------------
   概要      : 
             : http://localhost:1024/IW31_eigazaseki/login.php
-  作成者    : 
+  作成者    :               
   作成日    : 
   更新履歴  : 
 -----------------------------------------------------------------------------*/
 
 //  HTTPヘッダーで文字コードを指定
 //処理部
-
+$rgb = array(
+  "red" => 167,
+  "green" => 65,
+  "blue" => 189
+);
+$hsv = rgb2hsv($rgb);
+print_r($hsv);
+ 
+function rgb2hsv($rgb){
+  $r = $rgb['red'] / 255;
+  $g = $rgb['green'] / 255;
+  $b = $rgb['blue'] / 255;
+   
+  $max = max($r, $g, $b);
+  $min = min($r, $g, $b);
+  $v = $max;
+   
+  if($max === $min){
+    $h = 0;
+  } else if($r === $max){
+    $h = 60 * ( ($g - $b) / ($max - $min) ) + 0;
+  } else if($g === $max){
+    $h = 60 * ( ($b - $r) / ($max - $min) ) + 120;
+  } else {
+    $h = 60 * ( ($r - $g) / ($max - $min) ) + 240;
+  }
+  if($h < 0) $h = $h + 360;
+ 
+  $s = ($v != 0) ? ($max - $min) / $max : 0;
+   
+  $hsv = array("h" => $h, "s" => $s, "v" => $v);
+  return $hsv;
+}
 
 ?>
 

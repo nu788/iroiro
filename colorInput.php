@@ -96,19 +96,17 @@ for( $i = 1; $i <=10; $i++){
         <div class="snap-drawers">
             <div class="snap-drawer snap-drawer-left">
                 <div>
-                    <h3>iroiro</h3>
+                    <h3><a href="index.php">iroiro</a></h3>
 		    
                     <h4>Menu</h4>
                     <ul>
-                        <li><a href="index.php">TOPページ</a></li>
-                        <li><a href="search.php">デザイン検索</a></li>
-                        <li><a href="webTop.php">Webデザイン</a></li>
-                        <li><a href="colorTop.php">配色デザイン</a></li>
-                        <li><a href="tuto.php">チュートリアル</a></li>
-                        <li><a href="help.php">ヘルプ</a></li>
+                        <li><a href="index.php"><span class="menu lsf">home</span>　TOPページ</a></li>
+                        <li><a href="search.php"><span class="menu lsf">search</span>　デザイン検索</a></li>
+                        <li><a href="webTop.php"><span class="menu lsf">pc</span>　Webデザイン</a></li>
+                        <li><a href="colorTop.php"><span class="menu lsf">color</span>　配色デザイン</a></li>
                     </ul>
                     <div>
-                        <p>&copy;  2013 irorio All Rights Reserved.</p>
+                        <p>&copy; 2014 irorio All Rights Reserved.</p>
                     </div>
                 </div>
             </div>

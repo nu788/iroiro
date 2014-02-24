@@ -488,6 +488,12 @@ dl{
 	-moz-tranzition: all 0.9s;
 	transition: all 0.9s;
 }
+
+.tub a {
+	display:block;		
+	width:100%;
+	height:100%;
+}
 .tub:hover {
 	width: 70px;
 	padding:30px;	
@@ -550,6 +556,12 @@ dl{
 }
 
 
+
+.menu {
+	font-size:32px;
+	position:relative;
+	top:3px;
+}
 
 
 

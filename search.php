@@ -37,6 +37,52 @@ $opColorDisp = "";
 //色オプション
 $colorSel ="<selector id='colorSel' >";
 
+		       /*
+		//評価詳細
+		//初期化
+		for ($i = 1 ; $i <= 6 ; $i++){
+					
+		
+			$valuDisp ="";
+			
+			
+			
+			$sql = "SELECT siteDesId, count(*) FROM sitevalu where valuId = ".$i." group by siteDesId order by count(*) desc";
+			$result = funcDB($link,$sql);
+			
+			//フィールド数
+			$num_rows = mysql_num_fields($result);
+			
+			//件数
+			$num = mysql_num_rows($result) ;
+			
+			$siteCnt = 1;
+			                                                                                                                                              
+			// 内容の取得
+			if($num > 0){		 // 結果が一件以上の場合。
+				while ($row = mysql_fetch_row($result)) {
+					
+					//$valuSite[評価ID][順位] = siteDesId
+					$valuSite[$i][$siteCnt] = $row[0];
+					
+					$valuSite[$i] = array('','かわいい','クール','斬新','面白い','大人っぽい','ハイセンス');
+					
+					echo $valuSite[1][1];
+			
+					$siteCnt++;
+					
+					if ( $siteCnt > 10 ){ break; }
+					
+				}
+			}
+		
+		}
+
+		
+
+                         */
+
+
 // 検索ボタンが押されたら
 if( isset( $_POST["send"])){
 	
@@ -44,7 +90,7 @@ if( isset( $_POST["send"])){
 	
 	// ユーザの絞り込みするかどうか
 	if( $user == ""){
-		$sql = "SELECT * FROM sitedes";
+		$sql = "SELECT * FROM sitedes	";
 	} else{
 		$sql = "SELECT * FROM sitedes where userId LIKE '%".$user."%'";
 	}
@@ -63,6 +109,7 @@ $newNo = $num -8;
 // 内容の取得
 if($num > 0){		 // 結果が一件以上の場合。
 	while ($row = mysql_fetch_row($result)) {
+	
 			$siteNo = $row[4];
 			$siteTitle = $row[1];
 			$siteCap = $row[2];
@@ -136,6 +183,7 @@ if($num > 0){		 // 結果が一件以上の場合。
 						$colorDisp .="<div class='colorDisp' style='background-color : ".$siteDesColor.";width:".$divWidth."%'></div>";
 						
 						$colorClass .= " ".substr($siteDesColor , 1, 6);
+						
 	
 					}
 					$colorDisp.= "</div>";
@@ -149,6 +197,8 @@ if($num > 0){		 // 結果が一件以上の場合。
 
 			}
 			
+
+			
 			
 			//こっから表
 
@@ -158,6 +208,7 @@ if($num > 0){		 // 結果が一件以上の場合。
 			$disp .=" <p><strong>".$siteTitle."</strong>";
 			$disp .= "<small> by ".$userId."</small><br />";
 			$disp .= $siteCap."</p>";
+			//$disp .= $valuDisp."</p>";
 			
 			
 			if( isset( $_POST["colorOnly"])){
@@ -178,8 +229,8 @@ if($num > 0){		 // 結果が一件以上の場合。
 				$no++;	
 
 			}
-
 			
+
 					
 					
 	}
@@ -274,19 +325,17 @@ $(function(){
         <div class="snap-drawers">
             <div class="snap-drawer snap-drawer-left">
                 <div>
-                    <h3>iroiro</h3>
+                    <h3><a href="index.php">iroiro</a></h3>
 		    
                     <h4>Menu</h4>
                     <ul>
-                        <li><a href="index.php">TOPページ</a></li>
-                        <li><a href="search.php">デザイン検索</a></li>
-                        <li><a href="webTop.php">Webデザイン</a></li>
-                        <li><a href="colorTop.php">配色デザイン</a></li>
-                        <li><a href="tuto.php">チュートリアル</a></li>
-                        <li><a href="help.php">ヘルプ</a></li>
+                        <li><a href="index.php"><span class="menu lsf">home</span>　TOPページ</a></li>
+                        <li><a href="search.php"><span class="menu lsf">search</span>　デザイン検索</a></li>
+                        <li><a href="webTop.php"><span class="menu lsf">pc</span>　Webデザイン</a></li>
+                        <li><a href="colorTop.php"><span class="menu lsf">color</span>　配色デザイン</a></li>
                     </ul>
                     <div>
-                        <p>&copy;  2013 irorio All Rights Reserved.</p>
+                        <p>&copy; 2014 irorio All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
@@ -339,19 +388,19 @@ $(function(){
 				<li class="sort" data-sort="default" data-order="asc">新しい順</li>
 				<li class="sort active" data-sort="default" data-order="desc">リセット</li>
 			</ul>
-			
 			<ul id="mixNav" class="clearfix width100">
 			    <li>色系統</li>                     
 			    <li class="filter active" data-filter="all">すべて</li>
-			    <li class="filter black" data-filter="black">黒</li> 
-			    <li class="filter" data-filter="white">白</li> 
-			    <li class="filter" data-filter="red">赤</li> 
-			    <li class="filter" data-filter="pink">桃</li> 
-			    <li class="filter" data-filter="vaio">紫</li> 
-			    <li class="filter" data-filter="blue">青</li> 
-			    <li class="filter" data-filter="green">緑</li> 
-			    <li class="filter" data-filter="yellow">黄</li> 
-			    <li class="filter" data-filter="yellow">橙</li> 
+			    <li class="filter" data-filter="000 000000 111111 222222 333333 434343 555555 666666 444444 111 222 333 444">黒</li> 
+			    <li class="filter" data-filter="555555 666666 777777 888888 999999 555 666 777 888 999">灰</li> 
+			    <li class="filter" data-filter="fff ffffff eeeeee dddddd cccccc eee ddd ccc bbb aaa">白</li> 
+			    <li class="filter" data-filter="b25938 fbb4c4 fd1a1c ff0000 b24443 840f29 6f2a3c">赤</li> 
+			    <li class="filter" data-filter="fd1a1c f704e0">桃</li> 
+			    <li class="filter" data-filter="431e82 ca57c8 4014c1">紫</li> 
+			    <li class="filter" data-filter="b3cde3 093186 33cefc 1e6282 0e82b9 b3cd3 326ae8 abeedd 1d89e4 17222c 103a5e 93a3bf 83a3bf 2c96ef 798ea1">青</li> 
+			    <li class="filter" data-filter="ccebc5 33a206 5a804b 0ac36f">緑</li> 
+			    <li class="filter" data-filter="ffffb3 997f42 ffe600 f4f979">黄</li> 
+			    <li class="filter" data-filter="b25938 fdcdb7 ff7f00 ag6220 76514b ebc918 4a351f dd944b ff7f00 855c33 ef7b07 e1cab4 5c340c">橙</li> 
 
 			</ul> 
 					

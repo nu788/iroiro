@@ -54,11 +54,10 @@ $(function() {
 	
 		        if (data.length>0){
 				var res = data.substr(0,1)
-				$("#disp").html(data);
+			
 		        	
 				    if (res == 0){
 					
-					alert( "aa");
 					$.post(
 						"func/session_func.php",
 						{"id": id, "pass": pass},
@@ -67,7 +66,7 @@ $(function() {
 						}
 					)
 						
-						}	
+					} else {	$("#disp").html(data);}	
 			}
 		
 		

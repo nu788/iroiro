@@ -47,7 +47,7 @@ header("Content-Type:text/html; charset=UTF-8");
 </head>
 <body>
 	
-	<span id="disp">aa</span><br />
+	<span id="disp"></span><br />
 	
 	マイページにいくには、ログインしてください。<br />
 	

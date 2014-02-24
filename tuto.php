@@ -19,6 +19,14 @@ session_start();
 require 'func/func.php';
 $link =  funcFirst();		// $linkにコネクション情報
 
+if( isset($_SESSION["id"]))
+{
+	$link ="<a href=\"myPage.php\" class='lsf'>friend</a>";
+} else {
+	$link = "<a href=\"#\" class=\"lsf\" onclick=\"TINY.box.show({url:'login.php',post:'id=16',width:300,height:300,opacity:20,topsplit:3})\">friend</a>";	
+	
+}
+
 
 ?>
 
@@ -88,19 +96,17 @@ $(function(){
         <div class="snap-drawers">
             <div class="snap-drawer snap-drawer-left">
                 <div>
-                    <h3>iroiro</h3>
+                    <h3><a href="index.php">iroiro</a></h3>
 		    
                     <h4>Menu</h4>
                     <ul>
-                        <li><a href="index.php">TOPページ</a></li>
-                        <li><a href="search.php">デザイン検索</a></li>
-                        <li><a href="webTop.php">Webデザイン</a></li>
-                        <li><a href="colorTop.php">配色デザイン</a></li>
-                        <li><a href="tuto.php">チュートリアル</a></li>
-                        <li><a href="help.php">ヘルプ</a></li>
+                        <li><a href="index.php"><span class="menu lsf">home</span>　TOPページ</a></li>
+                        <li><a href="search.php"><span class="menu lsf">search</span>　デザイン検索</a></li>
+                        <li><a href="webTop.php"><span class="menu lsf">pc</span>　Webデザイン</a></li>
+                        <li><a href="colorTop.php"><span class="menu lsf">color</span>　配色デザイン</a></li>
                     </ul>
                     <div>
-                        <p>&copy;  2013 irorio All Rights Reserved.</p>
+                        <p>&copy; 2014 irorio All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
@@ -114,7 +120,7 @@ $(function(){
         <div id="content" class="snap-content">
 	
 			<div id="openmenu" class="tub"><a href="#" id="open-left"></a></div>
-			<div id="login" class="tub"><a href="#" class="lsf"><span onClick="logout()">×</span></a></div>
+			<div id="login" class="tub"><? print $link ?></div>
 			
 
 		
@@ -123,8 +129,31 @@ $(function(){
 			<section id="info">
 				<h2>チュートリアル</h2>
 				
+				
+				
+				<h3 class="wrap">①デザイン対象を選択</h3>
 				<p class="wrap">
-					まずはデザインしてみよう！
+					まずwebデザインをするか、配色デザインをするか選びましょう。<br />
+					初めてサイトを利用する人は、配色デザインがおすすめです！<br />
+					                 <br />
+					webデザインをする方は②へ、<br />
+					配色デザインをする方は③へ進んでください。 <br />
+					
+				</p>
+				
+				<h3 class="wrap">②デザイン対象を選択</h3>
+				<p class="wrap">
+					webデザインにはテンプレートがあります。<br />
+					レスポンシブサイトや、国旗など様々です。<br />
+					まずは簡単な国旗をデザインしてみましょう！
+					
+				</p>
+			
+				<h3 class="wrap">③デザイン開始！</h3>
+				<p class="wrap">
+					webデザインにはテンプレートがあります。<br />
+					レスポンシブサイトや、国旗など様々です。<br />
+					まずは簡単な国旗をデザインしてみましょう！
 					
 				</p>
 			
